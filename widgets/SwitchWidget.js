@@ -2,8 +2,7 @@ var React = require('react');
 var {
   View,
   Text,
-  SwitchIOS,
-  SwitchAndroid,
+  Switch,
   Platform,
   PixelRatio
 } = require('react-native')
@@ -12,19 +11,12 @@ var WidgetMixin = require('../mixins/WidgetMixin.js');
 
 var GiftedSwitch = React.createClass({
   _getSwitch() {
-    if (Platform.OS === 'android') {
-      return (
-        <SwitchAndroid
+    return (
+        <Switch
           {...this.props}
         />
       );
-    } else {
-      return (
-        <SwitchIOS
-          {...this.props}
-        />
-      );
-    }
+    
   },
   render() {
     return (
